@@ -1,4 +1,4 @@
-"""planning the number of guests, tea bags, treats, and the total cost of my tea party"""
+"""planning the number of guests, teabags, treats, and the total cost of tea party"""
 
 __author__: str = "730739029"
 
@@ -12,7 +12,8 @@ def main_planner(guests: int) -> None:
     return None
 
 
-# had to manually put str in from of each print function to convert the integers to str or else I would get error messages
+# had to manually put str in from of each print function to convert the integers to
+# str or else I would get error messages
 
 
 def tea_bags(people: int) -> int:
@@ -30,4 +31,5 @@ def cost(tea_count: int, treat_count: int) -> float:
     return (treats(people=treat_count) * 0.75) + (tea_bags(people=tea_count) * 0.50)
 
 
-# had to undue the multiplication done to tea_bags and treats by dividing both dfunctions by 3 and 2 respectively
+# had to undue the multiplication done to tea_bags and treats by dividing both
+# functions by 3 and 2 respectively

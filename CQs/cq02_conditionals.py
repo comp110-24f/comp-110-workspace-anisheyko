@@ -6,7 +6,8 @@ __author__ = 730739029
 def guess_a_number() -> None:
     secret: int = 7
     response = int(input("Guess a number:"))
-    # response can techinaclly be any word, it is just functioning as a local variable holder
+    # response can techinaclly be any word, it is just functioning as a
+    # local variable holder
     print("Your guess was " + str(response))
     if response == 7:
         print("You got it!")

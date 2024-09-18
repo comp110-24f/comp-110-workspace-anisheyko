@@ -67,13 +67,12 @@ def contains_char(word: str, letter: str) -> None:
     if word[4] == letter:
         match_count = match_count + 1
         print(letter + " found at index 4")
-    if match_count == 0:
-        print("No instances of " + letter + " found in " + word)
-    else:
+    if match_count > 0:
         print(str(match_count) + " instances of " + letter + " found in " + word)
+    else:
+        print("No instances of " + letter + " found in " + word)
 
 
-contains_char(word=input_word(), letter=input_letter())
 # have to call function each time in order for it to run in terminal
 if __name__ == "__main__":
     main()

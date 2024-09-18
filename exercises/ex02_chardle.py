@@ -79,11 +79,16 @@ def contains_char(word: str, letter: str) -> None:
         if (word[index]) == letter:
             match_count += 1
             index += 1
-            print(str(match_count) + " instances of " + letter + " found in " + word)
-        elif (word[index]) != input_letter:
+            print(letter + " found at index " + str(index - 1))
+        elif (word[index]) != letter:
+            # changed input_letter to letter bc it led to a static type annotation error
             index += 1
-        else:
-            print("No instances of " + letter + " found in " + word)
+    if match_count > 1:
+        print(str(match_count) + " instances of " + letter + " found in " + word)
+    elif match_count == 1:
+        print(str(match_count) + " instance of " + letter + " found in " + word)
+    else:
+        print("No instances of " + letter + " found in " + word)
 
 
 if __name__ == "__main__":

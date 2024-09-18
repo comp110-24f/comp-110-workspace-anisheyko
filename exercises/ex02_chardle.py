@@ -19,8 +19,9 @@ def input_word() -> str:
         # had to make sure to put ' or else they wouldnt appear around the printed word
     else:
         print("Error: Word must contain 5 characters.")
-        print("'" + choose_word + "'")
         exit()
+        print("'" + choose_word + "'")
+
         # put exit after the error meassage under ther same indentation
     return choose_word
 
@@ -35,8 +36,9 @@ def input_letter() -> str:
         print("'" + choose_letter + "'")
     else:
         print("Error: Character must be a single character")
-        print("'" + choose_letter + "'")
         exit()
+        print("'" + choose_letter + "'")
+
     return choose_letter
 
 

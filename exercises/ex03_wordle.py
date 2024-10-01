@@ -23,9 +23,28 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
     index: int = 0
     while index < len(secret_word):
         if secret_word[index] == char_guess:
-            print("True")
-            exit()
+            index = index
+            return True
         elif secret_word[index] != char_guess:
             index += 1
     if index == len(secret_word):
-        print("False")
+        return False
+
+
+def emojified(guess: str, secret: str) -> str:
+    """return colored emojis to indicate whether a character in the guess is in the correct position/wrong position"""
+    assert len(guess) == len(secret)
+    WHITE_BOX: str = "\U00002B1C"
+    GREEN_BOX: str = "\U0001F7E9"
+    YELLOW_BOX: str = "\U0001F7E8"
+    index: int = 0
+    while len(guess) <= len(secret):
+        if guess[index] == secret[index]:
+            print(GREEN_BOX)
+            index += 1
+        elif contains_char(secret_word=secret, char_guess=guess[index]) == True:
+            print(YELLOW_BOX)
+            index += 1
+        else:
+            print(WHITE_BOX)
+            index += 1

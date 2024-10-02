@@ -3,6 +3,15 @@
 __author__ = "730739029"
 
 
+def main(secret: str) -> None:
+    """The entrypoint of the program and main game loop."""
+    turn_num: int = 1
+    while turn_num <= 6:
+        print("===turn" + str(turn_num) + "/6===")
+        input_guess(secret_word_len=len(secret))
+        print(emojified(guess=, secret=secret))
+
+
 def input_guess(secret_word_len: int) -> str:
     """allows you to guess a word that must match the guess"""
     guess: str = input("Enter a " + str(secret_word_len) + " character word:")
@@ -32,7 +41,7 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
 
 
 def emojified(guess: str, secret: str) -> str:
-    """return colored emojis to indicate whether a character in the guess is in the correct position/wrong position"""
+    """return colored emojis to indicate whether a character in the guess is in the correct/incorrect position"""
     assert len(guess) == len(secret)
     WHITE_BOX: str = "\U00002B1C"
     GREEN_BOX: str = "\U0001F7E9"

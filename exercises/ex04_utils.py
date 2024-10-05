@@ -5,6 +5,8 @@ __author__ = 730739029
 
 def all(a: list[int], b: int) -> bool:
     index: int = 0
+    if len(a) == 0:
+        return False
     while index < len(a):
         if a[index] != b:
             return False
@@ -15,9 +17,8 @@ def all(a: list[int], b: int) -> bool:
 
 def max(c: list[int]) -> int:
     index: int = 0
-    biggest: int = (
-        0  # make local variabvle to keep track of current biggest num to compare the other nums to
-    )
+    biggest: int = c[index]
+    # make local variabvle to keep track of current biggest num to compare the other nums to
     if len(c) == 0:
         raise ValueError("max() arg is an empty List")
     while index < len(c):
@@ -29,6 +30,8 @@ def max(c: list[int]) -> int:
 
 def is_equal(d: list[int], e: list[int]) -> bool:
     index: int = 0
+    if len(d) != len(e):
+        return False
     while index < len(e):
         if d[index] != e[index]:
             return False

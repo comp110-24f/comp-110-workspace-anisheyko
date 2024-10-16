@@ -10,10 +10,15 @@ def test_find_and_return_max() -> None:
 
 def test_find_and_return_max1() -> None:
     numbers: list[int] = [1, 2, 3, 4, 5]
-    find_and_remove_max(numbers)
+    find_and_remove_max(
+        numbers
+    )  # call find and remove first so that the numbers call would be the list minus the max
     assert numbers == [1, 2, 3, 4]
 
 
 def test_find_and_return_max2() -> None:
     numbers: list[int] = []
     assert find_and_remove_max(numbers) == -1
+
+
+# this is an edge test

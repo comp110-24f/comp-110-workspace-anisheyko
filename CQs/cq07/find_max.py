@@ -12,6 +12,7 @@ def find_and_remove_max(input1: list[int]) -> int:
     while index < len(input1):
         if input1[index] == max:
             input1.pop(index)
-        index += 1
+        else:  # had to include else statement or else it wouldnt know if there was multiple max's
+            index += 1
     # print(input1)
     return max

@@ -26,9 +26,8 @@ def invert(dict_1: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(name_color: dict[str, str]) -> str:
     color_count: dict[str, int] = {}
-    dict_1: dict[int, str] = {}
-    dict_2: dict[str, int] = {}
-
+    favorite: str = ""
+    max_value: int = 0
     for (
         key
     ) in (
@@ -39,17 +38,14 @@ def favorite_color(name_color: dict[str, str]) -> str:
             color_count[color] += 1
         else:
             color_count[color] = 1
-    max_value: int = 0
+    print(color_count)
     for key in color_count:
         if color_count[key] > max_value:
+            favorite = key
             max_value = color_count[key]
-        dict_2[key] = (
-            max_value  # identifies which color had the biggest frequency in that dict
-        )
-    for key in dict_2:
-        dict_1[(color_count[key])] = key  # flips
-
-    return dict_1[max_value]
+        if color_count[key] == max_value:
+            continue  # continues on if there is a tie
+    return favorite
 
 
 def count(name: list[str]) -> dict[str, int]:

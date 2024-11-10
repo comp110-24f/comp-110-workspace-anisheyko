@@ -3,13 +3,14 @@
 from ex07.fish import Fish
 from ex07.bear import Bear
 
+
 class River:
-    
+
     day: int
     fish: list[Fish]
     bears: list[Bear]
-    
-    def __init__(self, num_fish: int, num_bears:int):
+
+    def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears"""
         self.day: int = 0
         self.fish: list[Fish] = []
@@ -21,23 +22,31 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
+       new_fish:list[str]=[]
+       for fish in Fish.self.age:
+            if Fish.self.age<3:
+                new_fish.append()
+    
         return None
 
     def bears_eating(self):
         return None
-    
+
     def check_hunger(self):
         return None
-        
+
     def repopulate_fish(self):
         return None
-    
+
     def repopulate_bears(self):
         return None
-    
-    def view_river(self):
+
+    def view_river(self) -> None:
+        print(f"~~~ Day {self.day}: ~~~")
+        print(f"Fish population: {self.fish}")
+        print(f"Bear population: {self.bears}")
         return None
-            
+
     def one_river_day(self):
         """Simulate one day of life in the river"""
         # Increase day by 1
@@ -60,4 +69,7 @@ class River:
         self.repopulate_bears()
         # Visualize River
         self.view_river()
-            
+
+    def one_river_week(self):
+        for times in range(7):
+            self.one_river_day()

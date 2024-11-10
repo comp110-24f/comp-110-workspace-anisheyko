@@ -21,15 +21,29 @@ class River:
         for _ in range(0, num_bears):
             self.bears.append(Bear())
 
-    def check_ages(self):
-       new_fish:list[str]=[]
-       for fish in Fish.self.age:
-            if Fish.self.age<3:
-                new_fish.append()
-    
+    def check_ages(self) -> None:
+        surviving_fish = []
+        surviving_bears = []  # create new lists to asdd surviving animals to
+        for fish in self.fish:  # calls Fish
+            if fish.age <= 3:  # calls age attribute from Fish
+                surviving_fish.append(fish)
+        for bears in self.bears:
+            if bears.age <= 5:
+                surviving_bears.append(bears)
+        self.fish = surviving_fish
+        self.bears = surviving_bears
+        return None
+
+    def remove_fish(self, amount: int) -> None:
+        for fish in range(0, amount + 1):
+            self.fish.pop(fish)
         return None
 
     def bears_eating(self):
+        if len(self.fish) >= 5:
+            river.remove_fish(3)
+            bears.eat(3)
+
         return None
 
     def check_hunger(self):

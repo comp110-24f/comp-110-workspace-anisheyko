@@ -1,5 +1,10 @@
-from ex07.river import River
+"""Simulation of viewing rhe river population."""
+
+__author__ = "730739029"
+
+
+from exercises.ex07.river import River
 
 my_river: River = River(10, 2)
 
-# my_river.view_river()
+my_river.view_river()

@@ -56,33 +56,28 @@ print(last(one))  # expect 2
 print(last(courses))  # expect 301
 
 
-def value_at(head: Node | None, index: int) -> int:
-    if head is None:  # first base case
-        raise IndexError("Index is out of bounds on the list.")
-    if index == 0:  # second base base
-        return head.value
-    else:  # recursive case
-        return value_at(
-            head.next, index - 1
-        )  # starts a5t the end and moves one index to the left until the right index is found
-    # index -1 and head.next modifies both arguments, and moves you closer to base casse by subtracting
-
-
-def max(head: Node | None) -> int:
-    if head is None:
-        raise ValueError("Cannot call max with None")
-    if head.next is None:
-        return head.value
-    rest: int = max(head.next)
-    if head.value > rest:
-        return head.value
-    else:
-        return rest
-
-
 def recursive_range(start: int, end: int) -> Node | None:
+    """Build a linked list recursively from start up until end (not inclusive)"""
+    if start > end:  # raising an exception for an edge case error
+        raise ValueError("Invalid use of recursive_range")
+    if start == end:
+        return None
+    else:  # recurive case intuition:handle the first case based on the specific call then build the rest of the list using the builder function recursively
+        return Node(start, recursive_range(start + 1, end))
+
+
+# or you can rewrite like this
+def recursive_range_2(start: int, end: int) -> Node | None:
     """Build a linked list recursively from start up until end (not inclusive)"""
     if start == end:
         return None
-    else:
-        return Node(start, recursive_range(start + 1, end))
+    else:  # recurive case intuition:handle the first case based on the specific call then build the rest of the list using the builder function recursively
+        first: int = start
+        rest: Node | None = recursive_range_2(start + 1, end)
+        return Node(first, rest)
+
+
+a: Node | None = recursive_range(2, 8)
+b: Node | None = recursive_range(110, 112)
+print(a)
+print(b)
